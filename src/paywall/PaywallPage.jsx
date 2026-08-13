@@ -19,6 +19,7 @@ import focusedPracticePreview from './assets/figma/product-preview/focused-pract
 import mockExamPreview from './assets/figma/product-preview/mock-exam.png'
 import scoreReportPreview from './assets/figma/product-preview/score-report.png'
 import videoGuidePreview from './assets/figma/product-preview/video-guide.png'
+import examPrepOverview from './assets/exam-prep-overview.mp4'
 
 function StatusBar({ className = '' }) {
   return <div className={`pw-status${className ? ` ${className}` : ''}`}><strong>9:41</strong><img src={statusIcons} alt="" aria-hidden="true" /></div>
@@ -34,6 +35,16 @@ function PaywallBackdrop({ onClose }) {
 }
 
 function SalesIntro() {
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef(null)
+
+  const playOverview = async () => {
+    setIsPlaying(true)
+    window.requestAnimationFrame(() => {
+      videoRef.current?.play().catch(() => setIsPlaying(false))
+    })
+  }
+
   return <section className="sales-intro">
     <div className="hero-copy">
       <span className="exam-plus-badge"><img src={examPlusIcon} alt="" />EXAM PLUS</span>
@@ -41,7 +52,11 @@ function SalesIntro() {
       <p>Practice with real SAT questions tailored to your weak spots. Learn faster with expert-led SAT videos covering key topics, test strategies, and question walkthroughs.</p>
     </div>
     <div className="sales-video-card">
-      <div className="sales-video"><img src={overviewVideo} alt="Study smarter, score higher with Solvely AI" /><button aria-label="Play overview video"><img src={playIcon} alt="" /></button></div>
+      <div className={`sales-video${isPlaying ? ' is-playing' : ''}`}>
+        {isPlaying
+          ? <video ref={videoRef} src={examPrepOverview} poster={overviewVideo} controls playsInline preload="metadata" onEnded={() => setIsPlaying(false)} aria-label="Exam Prep by Solvely AI overview video" />
+          : <><img className="sales-video-poster" src={overviewVideo} alt="Study smarter, score higher with Solvely AI" /><button onClick={playOverview} aria-label="Play overview video"><img src={playIcon} alt="" /></button></>}
+      </div>
       <strong>Exam Prep by Solvely AI - Quick Overview</strong>
     </div>
   </section>
