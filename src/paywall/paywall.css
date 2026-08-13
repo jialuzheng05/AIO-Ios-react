@@ -19,10 +19,10 @@
 .sales-video-card{width:350px;height:238px;margin:0 20px;padding:8px 8px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;border-radius:20px;background:#f5f7f9}
 .sales-video{position:relative;width:334px;height:180px;flex:none;overflow:hidden;border-radius:12px;background:#0a1727}
 .sales-video-poster{display:block;width:348px;height:188px;margin-left:-7px;object-fit:cover;filter:brightness(.6)}
-.sales-video>button{position:absolute;right:9px;bottom:12px;width:48px;height:48px;padding:0;background:transparent}
+.sales-video>button{position:absolute;right:16px;bottom:16px;width:48px;height:48px;padding:0;background:transparent}
 .sales-video>button img{display:block;width:48px;height:48px}
 .sales-video>video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
-.sales-video-card>strong{width:295px;height:30px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#111;text-overflow:ellipsis;white-space:nowrap;font:600 14px/22px Inter,sans-serif}
+.sales-video-card>strong{width:318px;height:30px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#111;text-overflow:ellipsis;white-space:nowrap;font:600 14px/22px Inter,sans-serif}
 
 .product-preview{width:393px;height:421.5px;margin-top:20px;padding-top:16px;display:flex;flex-direction:column;align-items:center;gap:12px;background:#fff}
 .product-title{width:393px;height:52px;padding:0 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center}

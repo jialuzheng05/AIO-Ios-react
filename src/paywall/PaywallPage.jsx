@@ -57,7 +57,7 @@ function SalesIntro() {
           ? <video ref={videoRef} src={examPrepOverview} poster={overviewVideo} controls playsInline preload="metadata" onEnded={() => setIsPlaying(false)} aria-label="Exam Prep by Solvely AI overview video" />
           : <><img className="sales-video-poster" src={overviewVideo} alt="Study smarter, score higher with Solvely AI" /><button onClick={playOverview} aria-label="Play overview video"><img src={playIcon} alt="" /></button></>}
       </div>
-      <strong>Exam Prep by Solvely AI - Quick Overview</strong>
+      <strong>How Exam Plus Helps You Prepare Smarter</strong>
     </div>
   </section>
 }
